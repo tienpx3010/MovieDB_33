@@ -16,6 +16,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+xcschememanagement.plist
 
 ## Other
 *.moved-aside
@@ -39,6 +40,11 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/
+.Pods/
+.DS_Store
+Pods/
+#API Key
+Private/
 
 # CocoaPods
 #
@@ -47,6 +53,9 @@ playground.xcworkspace
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
 # Pods/
+#
+# Add this line if you want to avoid checking in source code from the Xcode workspace
+# *.xcworkspace
 
 # Carthage
 #
