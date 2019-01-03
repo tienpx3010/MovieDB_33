@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Movie
 //
 //  Created by pham.xuan.tien on 12/27/18.
@@ -7,28 +7,34 @@
 //
 
 import UIKit
+import BWWalkthrough
 
-class HomeViewController: UITabBarController, BWWalkthroughViewControllerDelegate {
+final class HomeViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configView()
+    }
+
+    private func configView() {
         let firstLaunch = FirstLaunch()
         if firstLaunch.isFirstLaunch {
             showWalkthrough()
         }
     }
 
-    func showWalkthrough() {
+    private func showWalkthrough() {
+        guard let walkthroughViewController = Storyboards.walkthrough.instantiateViewController(withIdentifier: "walkthroughVC") as? BWWalkthroughViewController else {
+            return
+        }
         // Build the walkthrough
-        let walkthroughStoryBoard = UIStoryboard(name: "Walkthrough", bundle: nil)
-        let walkthroughViewController = walkthroughStoryBoard.instantiateViewController(withIdentifier: "walk") as! BWWalkthroughViewController
-        let pageOne = walkthroughStoryBoard.instantiateViewController(withIdentifier: "walk0")
-        let pageTwo = walkthroughStoryBoard.instantiateViewController(withIdentifier: "walk1")
-        let pageThree = walkthroughStoryBoard.instantiateViewController(withIdentifier: "walk2")
+        let pageOne = Storyboards.walkthrough.instantiateViewController(withIdentifier: "walkthroughPageVC01")
+        let pageTwo = Storyboards.walkthrough.instantiateViewController(withIdentifier: "walkthroughPageVC02")
+        let pageThree = Storyboards.walkthrough.instantiateViewController(withIdentifier: "walkthroughPageVC03")
 
         // Add pages
         walkthroughViewController.add(viewController: pageOne)
@@ -37,10 +43,12 @@ class HomeViewController: UITabBarController, BWWalkthroughViewControllerDelegat
         walkthroughViewController.delegate = self
 
         // Show walkthrough
-        self.present(walkthroughViewController, animated: false, completion: nil)
+        present(walkthroughViewController, animated: false, completion: nil)
     }
+}
 
+extension HomeViewController: BWWalkthroughViewControllerDelegate {
     func walkthroughCloseButtonPressed() {
-        self.dismiss(animated: false, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
 }

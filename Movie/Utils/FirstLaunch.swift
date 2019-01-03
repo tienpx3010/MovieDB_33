@@ -16,11 +16,10 @@ final class FirstLaunch {
     }
 
     init() {
-        let key = "wasLaunchedBefore"
-        let wasLaunchedBefore = userDefaults.bool(forKey: key)
+        let wasLaunchedBefore = userDefaults.bool(forKey: Constants.firstLaunchKey)
         self.wasLaunchedBefore = wasLaunchedBefore
         if !wasLaunchedBefore {
-            userDefaults.set(true, forKey: key)
+            userDefaults.set(true, forKey: Constants.firstLaunchKey)
         }
     }
 }

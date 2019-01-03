@@ -13,7 +13,7 @@
         <!--Walkthrough View Controller-->
         <scene sceneID="WBk-lM-IwH">
             <objects>
-                <viewController storyboardIdentifier="walk" id="gFZ-rD-vfO" customClass="BWWalkthroughViewController" customModule="Movie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="walkthroughVC" id="gFZ-rD-vfO" customClass="BWWalkthroughViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMs-qm-ceC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                     <action selector="close:" destination="gFZ-rD-vfO" eventType="touchUpInside" id="dCo-2n-opt"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOA-2w-PXw" customClass="CustomPageControl" customModule="Movie" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOA-2w-PXw" customClass="CustomPageControl" customModule="BWWalkthrough">
                                 <rect key="frame" x="142" y="449" width="91" height="15"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -65,7 +65,7 @@
         <!--Walkthrough Page View Controller-->
         <scene sceneID="Uca-2l-ye0">
             <objects>
-                <viewController storyboardIdentifier="walk0" id="6nj-sX-Ipg" customClass="BWWalkthroughPageViewController" customModule="Movie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="walkthroughPageVC01" id="6nj-sX-Ipg" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Psm-7N-Old">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,7 +159,7 @@ Cg
         <!--Walkthrough Page View Controller-->
         <scene sceneID="L72-A1-gjf">
             <objects>
-                <viewController storyboardIdentifier="walk1" id="Jke-V4-skO" customClass="BWWalkthroughPageViewController" customModule="Movie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="walkthroughPageVC02" id="Jke-V4-skO" customClass="BWWalkthroughPageViewController" customModule="Movie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BzP-5o-bSp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,7 +214,7 @@ Cg
         <!--Walkthrough Page View Controller-->
         <scene sceneID="3Nj-pY-DLW">
             <objects>
-                <viewController storyboardIdentifier="walk2" id="iW2-gp-COb" customClass="BWWalkthroughPageViewController" customModule="Movie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="walkthroughPageVC03" id="iW2-gp-COb" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Xb-A4-Att">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

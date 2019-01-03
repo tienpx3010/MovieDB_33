@@ -8,4 +8,5 @@ target 'Movie' do
   pod 'Reusable'
   pod 'SDWebImage'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git', :branch => 'wip/swift4'
+  pod 'BWWalkthrough', :git => 'https://github.com/tienpx3010/BWWalkthrough'
 end
