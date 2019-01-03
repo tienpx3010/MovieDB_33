@@ -119,6 +119,9 @@ Cg
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OeL-aw-3wg"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Linear"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLB-Xf-8Yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_walkthrough_01" id="xIC-S5-Erx">
@@ -200,6 +203,9 @@ Cg
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JMi-Bb-y2N"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="InOut"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0z8-nd-kgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
