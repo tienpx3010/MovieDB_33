@@ -7,5 +7,6 @@
 //
 
 struct Constants {
+    // First Launch Key
     static let firstLaunchKey = "wasLaunchedBefore"
 }
