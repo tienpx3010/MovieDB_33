@@ -8,11 +8,13 @@
 
 import UIKit
 import BWWalkthrough
+import ChameleonFramework
 
 final class HomeViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.tintColor = Colors.tabBarGradientColor
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -28,20 +30,18 @@ final class HomeViewController: UITabBarController {
     }
 
     private func showWalkthrough() {
-        guard let walkthroughViewController = Storyboards.walkthrough.instantiateViewController(withIdentifier: "walkthroughVC") as? BWWalkthroughViewController else {
+        guard let walkthroughViewController = Storyboards.walkthrough.instantiateViewController(withIdentifier:"walkthroughVC") as? BWWalkthroughViewController else {
             return
         }
         // Build the walkthrough
         let pageOne = Storyboards.walkthrough.instantiateViewController(withIdentifier: "walkthroughPageVC01")
         let pageTwo = Storyboards.walkthrough.instantiateViewController(withIdentifier: "walkthroughPageVC02")
         let pageThree = Storyboards.walkthrough.instantiateViewController(withIdentifier: "walkthroughPageVC03")
-
         // Add pages
         walkthroughViewController.add(viewController: pageOne)
         walkthroughViewController.add(viewController: pageTwo)
         walkthroughViewController.add(viewController: pageThree)
         walkthroughViewController.delegate = self
-
         // Show walkthrough
         present(walkthroughViewController, animated: false, completion: nil)
     }
