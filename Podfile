@@ -11,4 +11,9 @@ target 'Movie' do
   pod 'BWWalkthrough', :git => 'https://github.com/tienpx3010/BWWalkthrough'
   pod 'MIBadgeButton-Swift', :git => 'https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git', :branch => 'master'
   pod 'SkeletonView'
+<<<<<<< HEAD
 end
+=======
+end
+  
+>>>>>>> [Task#4917] Create UI for Home Screen

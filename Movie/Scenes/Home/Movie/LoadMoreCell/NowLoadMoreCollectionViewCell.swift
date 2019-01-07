@@ -9,5 +9,9 @@
 import UIKit
 import Reusable
 
+<<<<<<< HEAD
 final class NowLoadMoreCollectionViewCell: UICollectionViewCell, NibReusable {
+=======
+class NowLoadMoreCollectionViewCell: UICollectionViewCell, NibReusable {
+>>>>>>> [Task#4917] Create UI for Home Screen
 }
