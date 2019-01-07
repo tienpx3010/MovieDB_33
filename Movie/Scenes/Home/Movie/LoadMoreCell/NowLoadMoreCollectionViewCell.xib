@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NowLoadMoreCollectionViewCell" customModule="Movie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="256"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="140" height="256"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_more_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="wQC-gE-o9j">
+                        <rect key="frame" x="0.0" y="12" width="140" height="231"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-h7-oOA">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="211"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVl-cB-SQq">
+                                <rect key="frame" x="42.5" y="93.5" width="55.5" height="24"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpace">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.79607843137254897" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PVl-cB-SQq" firstAttribute="centerY" secondItem="Vu6-h7-oOA" secondAttribute="centerY" id="J09-8b-so8"/>
+                            <constraint firstItem="PVl-cB-SQq" firstAttribute="centerX" secondItem="Vu6-h7-oOA" secondAttribute="centerX" id="uj1-Y9-ZWJ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Vu6-h7-oOA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9Bw-2i-xLv"/>
+                <constraint firstAttribute="trailing" secondItem="wQC-gE-o9j" secondAttribute="trailing" id="FaW-2I-wyk"/>
+                <constraint firstItem="Vu6-h7-oOA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JVm-wg-pad"/>
+                <constraint firstAttribute="bottom" secondItem="wQC-gE-o9j" secondAttribute="top" multiplier="256/12" id="gsH-Qa-lh7"/>
+                <constraint firstItem="wQC-gE-o9j" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="231/256" id="mfh-5U-G05"/>
+                <constraint firstItem="wQC-gE-o9j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qxN-JS-SuL"/>
+                <constraint firstItem="Vu6-h7-oOA" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="210/256" constant="1" id="ucI-pf-lIz"/>
+                <constraint firstAttribute="trailing" secondItem="Vu6-h7-oOA" secondAttribute="trailing" id="vro-UF-pHL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <point key="canvasLocation" x="40" y="46.776611694152926"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img_more_shadow" width="169" height="231"/>
+    </resources>
+</document>
