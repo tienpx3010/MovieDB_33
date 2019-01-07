@@ -25,7 +25,7 @@ final class HomeViewController: UITabBarController {
         if firstLaunch.isFirstLaunch {
             showWalkthrough()
         }
-        tabBar.tintColor = UIColor.tabBarGradientColor
+        tabBar.tintColor = UIColor.firstGradientColor
     }
 
     private func showWalkthrough() {
