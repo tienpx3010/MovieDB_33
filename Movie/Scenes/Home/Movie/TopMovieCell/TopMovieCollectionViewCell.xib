@@ -30,7 +30,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="DQc-h2-9IF" userLabel="Shadow View">
                         <rect key="frame" x="0.0" y="0.0" width="140" height="231"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uoy-MV-512">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster_not_available" translatesAutoresizingMaskIntoConstraints="NO" id="Uoy-MV-512">
                         <rect key="frame" x="0.0" y="0.0" width="140" height="210"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
@@ -140,5 +140,6 @@
     <resources>
         <image name="img_shadow" width="161" height="229"/>
         <image name="img_shadow_02" width="140" height="57"/>
+        <image name="poster_not_available" width="275" height="275"/>
     </resources>
 </document>
