@@ -28,6 +28,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfl-O1-adl">
                                 <rect key="frame" x="90" y="519" width="195" height="91"/>
                                 <state key="normal" image="icon_get_started"/>
+                                <connections>
+                                    <action selector="close:" destination="gFZ-rD-vfO" eventType="touchUpInside" id="8S2-BU-ygE"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOA-2w-PXw" customClass="CustomPageControl" customModule="BWWalkthrough">
                                 <rect key="frame" x="142" y="449" width="91" height="15"/>

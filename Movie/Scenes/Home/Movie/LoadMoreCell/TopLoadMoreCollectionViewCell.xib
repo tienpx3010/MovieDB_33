@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Rv6-xz-T7E" customClass="TopLoadMoreCollectionViewCell" customModule="Movie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="230"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="140" height="230"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_more_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="ySO-XM-RE7">
+                        <rect key="frame" x="0.0" y="12" width="140" height="220"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFO-Xp-l3R">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="210"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAm-Pz-sQP">
+                                <rect key="frame" x="43" y="94" width="56" height="24"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpace">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cAm-Pz-sQP" firstAttribute="leading" secondItem="UFO-Xp-l3R" secondAttribute="leading" constant="43" id="e5L-lv-QXw"/>
+                            <constraint firstItem="cAm-Pz-sQP" firstAttribute="top" secondItem="UFO-Xp-l3R" secondAttribute="top" constant="94" id="kRH-Yd-Gen"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="UFO-Xp-l3R" firstAttribute="leading" secondItem="Rv6-xz-T7E" secondAttribute="leading" id="2YJ-gH-q5w"/>
+                <constraint firstAttribute="trailing" secondItem="UFO-Xp-l3R" secondAttribute="trailing" id="K0z-wI-AkB"/>
+                <constraint firstItem="UFO-Xp-l3R" firstAttribute="leading" secondItem="ySO-XM-RE7" secondAttribute="leading" id="Onl-AN-ZJa"/>
+                <constraint firstItem="UFO-Xp-l3R" firstAttribute="trailing" secondItem="ySO-XM-RE7" secondAttribute="trailing" id="P4E-A4-KOu"/>
+                <constraint firstItem="ySO-XM-RE7" firstAttribute="top" secondItem="Rv6-xz-T7E" secondAttribute="top" constant="12" id="TVi-xY-tQj"/>
+                <constraint firstItem="UFO-Xp-l3R" firstAttribute="top" secondItem="Rv6-xz-T7E" secondAttribute="top" id="V9e-T4-vfK"/>
+                <constraint firstAttribute="bottom" secondItem="UFO-Xp-l3R" secondAttribute="bottom" constant="20" id="bFi-Ig-GuF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="5Ly-QO-azk"/>
+            <point key="canvasLocation" x="41.600000000000001" y="227.58620689655174"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img_more_shadow" width="169" height="231"/>
+    </resources>
+</document>
