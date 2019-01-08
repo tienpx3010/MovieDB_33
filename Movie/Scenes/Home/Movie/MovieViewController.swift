@@ -26,6 +26,8 @@ final class MovieViewController: UIViewController {
             bottom: 5,
             right: 10
         )
+        static let loadingNowMovies = Array(repeating: Movie(), count: 3)
+        static let loadingTopMovies = Array(repeating: Movie(), count: 7)
     }
     private var nowMovies = [Movie]() {
         didSet {
@@ -52,7 +54,7 @@ final class MovieViewController: UIViewController {
     }
     
     private func configNowMovieCollectionView() {
-        nowMovies = [Movie(), Movie(), Movie(), Movie()]
+        nowMovies = Constants.loadingNowMovies
         nowMovieCollectionView.delegate = self
         nowMovieCollectionView.dataSource = self
         nowMovieCollectionView.register(cellType: NowMovieCollectionViewCell.self)
@@ -60,7 +62,7 @@ final class MovieViewController: UIViewController {
     }
     
     private func configtopMovieCollectionView() {
-        topMovies = [Movie(), Movie(), Movie(), Movie(), Movie(), Movie(), Movie()]
+        topMovies = Constants.loadingTopMovies
         topMovieCollectionView.delegate = self
         topMovieCollectionView.dataSource = self
         topMovieCollectionView.register(cellType: TopMovieCollectionViewCell.self)
@@ -97,11 +99,6 @@ final class MovieViewController: UIViewController {
             }
         }
     }
-}
-
-// MARK: - StoryboardSceneBased
-extension MovieViewController: StoryboardSceneBased {
-    static var sceneStoryboard = Storyboards.main
 }
 
 // MARK: - UICollectionViewDataSource
@@ -146,19 +143,19 @@ extension MovieViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension MovieViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else {
+            return
+        }
         UIView.animate(withDuration: Constants.toggleCellAnimationDuration) {
-            guard let cell = collectionView.cellForItem(at: indexPath) else {
-                return
-            }
             cell.transform = .init(scaleX: Constants.toggleCellScale, y: Constants.toggleCellScale)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.2) {
-            guard let cell = collectionView.cellForItem(at: indexPath) else {
-                return
-            }
+        guard let cell = collectionView.cellForItem(at: indexPath) else {
+            return
+        }
+        UIView.animate(withDuration: Constants.toggleCellAnimationDuration) {
             cell.transform = .identity
         }
         let viewController = MovieDetailViewController.instantiate()
@@ -191,4 +188,9 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return Constants.sectionInsets
     }
+}
+
+// MARK: - StoryboardSceneBased
+extension MovieViewController: StoryboardSceneBased {
+    static var sceneStoryboard = Storyboards.main
 }

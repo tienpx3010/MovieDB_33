@@ -30,7 +30,8 @@ final class TopMovieCollectionViewCell: UICollectionViewCell, NibReusable {
     func setContentForCell(movie: Movie) {
         guard movie.id != 0 else { return }
         imageView.sd_setImage(with: URL(string: URLs.APIImagesPath + movie.posterPath),
-                              completed: { (_, _, _, _) in
+                              completed: { [weak self] (_, _, _, _) in
+                                guard let self = self else { return }
                                 self.imageView.hideSkeleton()
         })
         titleLabel.text = movie.title

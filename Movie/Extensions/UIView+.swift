@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIImageView {
+extension UIView {
     func setCornerRadius(_ radius: CGFloat) {
         layer.masksToBounds = true
         layer.cornerRadius = radius
