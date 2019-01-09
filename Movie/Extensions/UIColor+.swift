@@ -16,7 +16,10 @@ extension UIColor {
         }
         return [firstColor, secondColor]
     }
-    public static let tabBarGradientColor = GradientColor(.leftToRight,
+    public static let firstGradientColor = GradientColor(.leftToRight,
                                                           frame: CGRect(x: 0, y: 0, width: 80, height: 20),
                                                           colors: mixColors)
+    public static let secondGradientColor = GradientColor(.topToBottom,
+                                                         frame: CGRect(x: 0, y: 0, width: 30, height: 30),
+                                                         colors: mixColors)
 }
