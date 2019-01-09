@@ -10,7 +10,7 @@ import Foundation
 
 enum MovieType {
     case now, upcoming, popular, top
-
+    
     var url: String {
         switch self {
         case .now:

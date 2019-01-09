@@ -11,10 +11,8 @@ import UIKit
 
 extension String {
     static func createScoreStyleAttributedString(_ score: Float, color: UIColor) -> NSMutableAttributedString {
-        guard let mediumFont = UIFont(name: "SFProDisplay-Medium", size: 20),
-            let regularFont = UIFont(name: "SFProDisplay-Regular", size: 12) else {
-                return NSMutableAttributedString(string: "")
-        }
+        let mediumFont = UIFont.sfProDisplayFont(ofSize: 20, weight: .medium)
+        let regularFont = UIFont.sfProDisplayFont(ofSize: 12, weight: .regular)
         let scroreString = String(score)
         let number = scroreString.split(separator: ".")[0]
         let remain = scroreString.split(separator: ".")[1]
@@ -22,8 +20,7 @@ extension String {
             .font: mediumFont,
             .foregroundColor: color
         ]
-        let numberAttributedString = NSAttributedString(string: String(number),
-                                                        attributes: firstAttributes)
+        let numberAttributedString = NSAttributedString(string: String(number), attributes: firstAttributes)
         let mutableAttributedString = NSMutableAttributedString(attributedString: numberAttributedString)
         let secondAttributes: [NSAttributedString.Key: Any] = [
             .baselineOffset: 5,
