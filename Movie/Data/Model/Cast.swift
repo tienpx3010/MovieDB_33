@@ -18,14 +18,14 @@ struct Cast: Mappable {
     var name = ""
     var order: Int = 0
     var profilePath = ""
-
-	init?(map: Map) {
-	}
-
+    
+    init?(map: Map) {
+    }
+    
     init(){
     }
-
-	mutating func mapping(map: Map) {
+    
+    mutating func mapping(map: Map) {
         castId <- map["cast_id"]
         character <- map["character"]
         creditId <- map["credit_id"]
@@ -34,5 +34,5 @@ struct Cast: Mappable {
         name <- map["name"]
         order <- map["order"]
         profilePath <- map["profile_path"]
-	}
+    }
 }

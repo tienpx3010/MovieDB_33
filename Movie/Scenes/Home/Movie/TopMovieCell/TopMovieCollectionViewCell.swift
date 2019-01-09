@@ -48,10 +48,13 @@ final class TopMovieCollectionViewCell: UICollectionViewCell, NibReusable {
         scoreLabel.layer.masksToBounds = true
         scoreLabel.layer.cornerRadius = scoreLabel.frame.height / 2
         scoreLabel.backgroundColor = UIColor.secondGradientColor
-        imageView.showAnimatedGradientSkeleton()
-        yearLabel.showAnimatedGradientSkeleton()
-        animationScore.showAnimatedGradientSkeleton()
-        titleLabel.showAnimatedGradientSkeleton()
+        showAnimation()
+    }
+
+    private func showAnimation() {
+        [imageView, yearLabel, animationScore, titleLabel].forEach {
+            $0.showAnimatedGradientSkeleton()
+        }
     }
 
     private func setMovieScore(_ score: Float) {

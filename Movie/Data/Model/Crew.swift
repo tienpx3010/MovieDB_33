@@ -17,14 +17,14 @@ struct Crew: Mappable {
     var job = ""
     var name = ""
     var profilePath = ""
-
-	init?(map: Map) {
-	}
-
+    
+    init?(map: Map) {
+    }
+    
     init(){
     }
-
-	mutating func mapping(map: Map) {
+    
+    mutating func mapping(map: Map) {
         creditId <- map["credit_id"]
         department <- map["department"]
         gender <- map["gender"]
@@ -32,5 +32,5 @@ struct Crew: Mappable {
         job <- map["job"]
         name <- map["name"]
         profilePath <- map["profile_path"]
-	}
+    }
 }

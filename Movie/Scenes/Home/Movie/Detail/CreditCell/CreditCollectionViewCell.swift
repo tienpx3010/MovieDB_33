@@ -10,7 +10,7 @@ import UIKit
 import Reusable
 import SDWebImage
 
-class CreditCollectionViewCell: UICollectionViewCell, NibReusable {
+final class CreditCollectionViewCell: UICollectionViewCell, NibReusable {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!

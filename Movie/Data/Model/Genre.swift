@@ -12,10 +12,10 @@ import ObjectMapper
 struct Genre: Mappable {
     var id: Int = 0
     var name: String = ""
-
+    
     init?(map: Map) {
     }
-
+    
     mutating func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]

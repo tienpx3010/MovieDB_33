@@ -10,7 +10,7 @@ import Foundation
 
 class MovieDetailRequest: BaseRequest {
     required init(id: Int) {
-        let body: [String: Any]  = [
+        let body: [String: Any] = [
             "language": "en-US",
             "append_to_response": "credits, reviews"
         ]

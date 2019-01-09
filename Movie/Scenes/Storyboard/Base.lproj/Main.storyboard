@@ -48,6 +48,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpL-D6-WZc">
+                                        <rect key="frame" x="320" y="19" width="28" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icon_search"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -223,6 +228,7 @@
         <image name="icon_categories_selected" width="26" height="22"/>
         <image name="icon_movies" width="27" height="26"/>
         <image name="icon_movies_selected" width="27" height="26"/>
+        <image name="icon_search" width="23" height="23"/>
         <image name="icon_star" width="26" height="26"/>
         <image name="icon_star_selected" width="27" height="27"/>
     </resources>

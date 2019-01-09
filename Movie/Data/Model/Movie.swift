@@ -34,13 +34,22 @@ struct Movie: Mappable {
     var tagline = ""
     var cast = [Cast]()
     var crew = [Crew]()
-
+    var info: String {
+        let year = Date.fromString(date: releaseDate).year
+        let duration = Util.minutesToHoursMinutes(minutes: runtime)
+        return "(\(year)) - \(duration)"
+    }
+    var genresString: String {
+        let string = genres.map { String($0.name) }
+        return string.joined(separator: ", ")
+    }
+    
     init?(map: Map) {
     }
-
+    
     init() {
     }
-
+    
     mutating func mapping(map: Map) {
         voteCount <- map["vote_count"]
         id <- map["id"]
@@ -66,16 +75,5 @@ struct Movie: Mappable {
         tagline <- map["tagline"]
         cast <- map["credits.cast"]
         crew <- map["credits.crew"]
-    }
-
-    func getInfoString() -> String {
-        let year = Date.fromString(date: releaseDate).year
-        let duration = Util.minutesToHoursMinutes(minutes: runtime)
-        return "(\(year)) - \(duration)"
-    }
-
-    func getGenresString() -> String {
-        let string = genres.map {String($0.name)}
-        return string.joined(separator: ", ")
     }
 }

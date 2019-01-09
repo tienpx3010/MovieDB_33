@@ -38,8 +38,13 @@ final class NowMovieCollectionViewCell: UICollectionViewCell, NibReusable {
     
     private func configCell() {
         imageView.setCornerRadius(Constants.imageCornerRadius)
-        imageView.showAnimatedGradientSkeleton()
-        animationLabel.showAnimatedGradientSkeleton()
+        showAnimation()
+    }
+
+    private func showAnimation() {
+        [imageView, animationLabel].forEach {
+            $0.showAnimatedGradientSkeleton()
+        }
     }
     
     private func hideAnimation() {
