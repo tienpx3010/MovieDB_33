@@ -15,7 +15,11 @@ final class NowMovieCollectionViewCell: UICollectionViewCell, NibReusable {
     @IBOutlet private weak var movieNameLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var animationLabel: UILabel!
-    
+
+    private struct Constants {
+        static let imageCornerRadius: CGFloat = 5
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         configCell()
@@ -33,7 +37,7 @@ final class NowMovieCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     private func configCell() {
-        imageView.setCornerRadius(5)
+        imageView.setCornerRadius(Constants.imageCornerRadius)
         imageView.showAnimatedGradientSkeleton()
         animationLabel.showAnimatedGradientSkeleton()
     }

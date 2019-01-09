@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Set font for tabbar title text
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "SFProDisplay-Regular", size: 10)!], for: UIControl.State.normal)
+        guard let font = UIFont(name: "SFProDisplay-Regular", size: 10) else {
+            return true
+        }
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: UIControl.State.normal)
         return true
     }
 }

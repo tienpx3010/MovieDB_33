@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="12" width="140" height="231"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-h7-oOA">
-                        <rect key="frame" x="0.0" y="0.0" width="140" height="211"/>
+                        <rect key="frame" x="0.0" y="7" width="140" height="211"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVl-cB-SQq">
                                 <rect key="frame" x="42.5" y="93.5" width="55.5" height="24"/>
@@ -58,7 +58,7 @@
             <constraints>
                 <constraint firstItem="Vu6-h7-oOA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9Bw-2i-xLv"/>
                 <constraint firstAttribute="trailing" secondItem="wQC-gE-o9j" secondAttribute="trailing" id="FaW-2I-wyk"/>
-                <constraint firstItem="Vu6-h7-oOA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JVm-wg-pad"/>
+                <constraint firstItem="Vu6-h7-oOA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="JVm-wg-pad"/>
                 <constraint firstAttribute="bottom" secondItem="wQC-gE-o9j" secondAttribute="top" multiplier="256/12" id="gsH-Qa-lh7"/>
                 <constraint firstItem="wQC-gE-o9j" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="231/256" id="mfh-5U-G05"/>
                 <constraint firstItem="wQC-gE-o9j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qxN-JS-SuL"/>

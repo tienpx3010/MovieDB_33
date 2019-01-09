@@ -24,9 +24,21 @@ struct Movie: Mappable {
     var adult = false
     var overview = ""
     var releaseDate = ""
+    // Detail
+    var imdbId = ""
+    var budget: Int = 0
+    var genres = [Genre]()
+    var revenue: Int = 0
+    var runtime: Int = 0
+    var status = ""
+    var tagline = ""
+    var cast = [Cast]()
+    var crew = [Crew]()
 
     init?(map: Map) {
+    }
 
+    init() {
     }
 
     mutating func mapping(map: Map) {
@@ -44,5 +56,26 @@ struct Movie: Mappable {
         adult <- map["adult"]
         overview <- map["overview"]
         releaseDate <- map["release_date"]
+        // Detail
+        imdbId <- map["imdb_id"]
+        budget <- map["budget"]
+        genres <- map["genres"]
+        revenue <- map["revenue"]
+        runtime <- map["runtime"]
+        status <- map["status"]
+        tagline <- map["tagline"]
+        cast <- map["credits.cast"]
+        crew <- map["credits.crew"]
+    }
+
+    func getInfoString() -> String {
+        let year = Date.fromString(date: releaseDate).year
+        let duration = Util.minutesToHoursMinutes(minutes: runtime)
+        return "(\(year)) - \(duration)"
+    }
+
+    func getGenresString() -> String {
+        let string = genres.map {String($0.name)}
+        return string.joined(separator: ", ")
     }
 }

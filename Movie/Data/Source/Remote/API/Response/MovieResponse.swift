@@ -10,7 +10,7 @@ import ObjectMapper
 
 class MoviesResponse: Mappable {
     var movies = [Movie]()
-    
+
     required init(map: Map) {
         mapping(map: map)
     }
