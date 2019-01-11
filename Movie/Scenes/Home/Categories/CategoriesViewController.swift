@@ -8,8 +8,7 @@
 
 import UIKit
 
-final class CategoriesViewController: UIViewController {
-    @IBOutlet private weak var topBarView: UIView!
+final class CategoriesViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     private let movieRepository = MovieRepositoryImpl(api: APIService.share)
@@ -32,10 +31,11 @@ final class CategoriesViewController: UIViewController {
     }
 
     private func configView() {
-        topBarView.backgroundColor = UIColor.gradientColorForView(view: topBarView)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(cellType: CategoryTableViewCell.self)
+        tableView.do {
+            $0.dataSource = self
+            $0.delegate = self
+            $0.register(cellType: CategoryTableViewCell.self)
+        }
     }
 
     private func fetchData() {
@@ -63,10 +63,12 @@ extension CategoriesViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         switch indexPath.row {
         case 0...Constants.numberOfCategory - 1:
-            cell.setContentForCell(name: MovieType.allCases[indexPath.row].name)
+            let type = MovieType.allCases[indexPath.row]
+            cell.setContentForCell(name: type.name)
             return cell
         default:
-            cell.setContentForCell(name: genres[indexPath.row - Constants.numberOfCategory].name)
+            let genre = genres[indexPath.row - Constants.numberOfCategory]
+            cell.setContentForCell(name: genre.name)
             return cell
         }
     }
@@ -78,14 +80,16 @@ extension CategoriesViewController: UITableViewDelegate {
         guard let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell else {
             return
         }
-        UIView.animate(withDuration: Constants.toggleCellAnimationDuration, animations: { [weak cell] in
-            guard let cell = cell else { return }
-            cell.transform = .init(scaleX: Constants.toggleCellScale, y: Constants.toggleCellScale)
-            }, completion: { [weak cell] _ in
-                guard let cell = cell else { return }
-                UIView.animate(withDuration: Constants.toggleCellAnimationDuration) {
-                    cell.transform = .identity
-                }
-        })
+        cell.animate()
+        let movieListViewController = MovieListViewController.instantiate()
+        switch indexPath.row {
+        case 0...Constants.numberOfCategory - 1:
+            let type = MovieType.allCases[indexPath.row]
+            movieListViewController.type = type
+        default:
+            let genre = genres[indexPath.row - Constants.numberOfCategory]
+            movieListViewController.genreId = genre.id
+        }
+        present(movieListViewController, animated: false, completion: nil)
     }
 }

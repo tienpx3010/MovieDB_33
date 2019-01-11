@@ -15,4 +15,8 @@ struct URLs {
     static let APIMoviePopularURL = APIBaseUrl + "/movie/popular"
     static let APIMovieTopRatedURL = APIBaseUrl + "/movie/top_rated"
     static let APIMovieDetailURL = APIBaseUrl + "/movie/"
+    static let APISearchURL = APIBaseUrl + "/search/movie"
+    static let APIGenreListURL = APIBaseUrl + "/genre/movie/list"
+    static let APIDiscoverMovieURL = APIBaseUrl + "/discover/movie"
+    static let YoutubeThumbnailImage = "https://img.youtube.com/vi/%@/hqdefault.jpg"
 }

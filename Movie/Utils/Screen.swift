@@ -17,4 +17,5 @@ struct Screen {
     static let designHeight: CGFloat = 667
     static let ratioWidth = width / designWidth
     static let ratioHeight = height / designHeight
+    static let statusBarHeight = UIApplication.shared.statusBarFrame.height
 }

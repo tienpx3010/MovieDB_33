@@ -13,4 +13,13 @@ extension UIView {
         layer.masksToBounds = true
         layer.cornerRadius = radius
     }
+    
+    func animate() {
+        let scale = CASpringAnimation(keyPath: "transform.scale").then {
+            $0.duration = 0.6
+            $0.fromValue = 0.95
+            $0.toValue = 1.0
+        }
+        layer.add(scale, forKey: "scale")
+    }
 }

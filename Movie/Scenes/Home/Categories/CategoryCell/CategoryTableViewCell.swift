@@ -12,7 +12,7 @@ import Reusable
 final class CategoryTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet private weak var categoryImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-
+    
     private struct Constants {
         static let imageCornerRadius: CGFloat = 5
     }
