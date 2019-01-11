@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct Genre: Mappable {
     var id: Int = 0
-    var name: String = ""
+    var name = ""
     
     init?(map: Map) {
     }
