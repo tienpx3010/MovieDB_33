@@ -17,10 +17,14 @@ extension Date {
         }
         return date
     }
-
+    
     var year: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter.string(from: self)
+    }
+    
+    static func second(from referenceDate: Date) -> Int {
+        return Int(Date().timeIntervalSince(referenceDate).rounded())
     }
 }

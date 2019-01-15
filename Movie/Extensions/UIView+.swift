@@ -23,3 +23,9 @@ extension UIView {
         layer.add(scale, forKey: "scale")
     }
 }
+
+extension UIResponder {
+    public var parentViewController: UIViewController? {
+        return next as? UIViewController ?? next?.parentViewController
+    }
+}

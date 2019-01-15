@@ -34,6 +34,9 @@ struct Movie: Mappable {
     var tagline = ""
     var cast = [Cast]()
     var crew = [Crew]()
+    // Video
+    var videos = [Video]()
+    // Info
     var info: String {
         let year = Date.fromString(date: releaseDate).year
         let duration = Util.minutesToHoursMinutes(minutes: runtime)
@@ -75,5 +78,6 @@ struct Movie: Mappable {
         tagline <- map["tagline"]
         cast <- map["credits.cast"]
         crew <- map["credits.crew"]
+        videos <- map["videos.results"]
     }
 }

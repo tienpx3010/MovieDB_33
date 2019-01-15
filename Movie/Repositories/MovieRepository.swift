@@ -12,9 +12,12 @@ import ObjectMapper
 protocol MovieRepository {
     func getMovies(type: MovieType, page: Int, completion: @escaping (BaseResult<MoviesResponse>) -> Void)
     func getMovieDetail(id: Int, completion: @escaping (BaseResult<Movie>) -> Void)
+    func searchMovie(text: String, page: Int, completion: @escaping (BaseResult<MoviesResponse>) -> Void)
+    func getGenreList(completion: @escaping (BaseResult<GenreResponse>) -> Void)
+    func getMoviesByGenre(id: Int, page: Int, completion: @escaping (BaseResult<MoviesResponse>) -> Void)
 }
 
-class MovieRepositoryImpl: MovieRepository {
+final class MovieRepositoryImpl: MovieRepository {
     private var api: APIService!
 
     required init(api: APIService) {
@@ -39,6 +42,48 @@ class MovieRepositoryImpl: MovieRepository {
         guard let api = api else { return }
         let input = MovieDetailRequest(id: id)
         api.request(input: input) { (object: Movie?, error) in
+            guard let object = object else {
+                guard let error = error else {
+                    return completion(.failure(error: nil))
+                }
+                return completion(.failure(error: error))
+            }
+            completion(.success(object))
+        }
+    }
+
+    func searchMovie(text: String, page: Int, completion: @escaping (BaseResult<MoviesResponse>) -> Void) {
+        guard let api = api else { return }
+        let input = SearchRequest(text: text, page: page)
+        api.request(input: input) { (object: MoviesResponse?, error) in
+            guard let object = object else {
+                guard let error = error else {
+                    return completion(.failure(error: nil))
+                }
+                return completion(.failure(error: error))
+            }
+            completion(.success(object))
+        }
+    }
+
+    func getGenreList(completion: @escaping (BaseResult<GenreResponse>) -> Void) {
+        guard let api = api else { return }
+        let input = GenreRequest()
+        api.request(input: input) { (object: GenreResponse?, error) in
+            guard let object = object else {
+                guard let error = error else {
+                    return completion(.failure(error: nil))
+                }
+                return completion(.failure(error: error))
+            }
+            completion(.success(object))
+        }
+    }
+    
+    func getMoviesByGenre(id: Int, page: Int, completion: @escaping (BaseResult<MoviesResponse>) -> Void) {
+        guard let api = api else { return }
+        let input = MovieByGenreRequest(genreId: id, page: page)
+        api.request(input: input) { (object: MoviesResponse?, error) in
             guard let object = object else {
                 guard let error = error else {
                     return completion(.failure(error: nil))

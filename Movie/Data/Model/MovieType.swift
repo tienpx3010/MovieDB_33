@@ -8,9 +8,20 @@
 
 import Foundation
 
-enum MovieType {
+enum MovieType: CaseIterable {
     case now, upcoming, popular, top
-    
+    var name: String {
+        switch self {
+        case .now:
+            return "Now playing"
+        case .upcoming:
+            return "Up coming"
+        case .popular:
+            return "Popular"
+        case .top:
+            return "Top Rated"
+        }
+    }
     var url: String {
         switch self {
         case .now:

@@ -10,11 +10,12 @@ import UIKit
 import Reusable
 
 final class GenreCollectionViewCell: UICollectionViewCell, NibReusable {
-    @IBOutlet private weak var titleLabel: UILabel!
-    var isToggle = false
+    @IBOutlet weak var titleLabel: UILabel!
+
     private struct Constants {
         static let labelCornerRadius: CGFloat = 5
     }
+    var isToggle = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +24,7 @@ final class GenreCollectionViewCell: UICollectionViewCell, NibReusable {
 
     private func configCell() {
         titleLabel.setCornerRadius(Constants.labelCornerRadius)
-        titleLabel.backgroundColor = UIColor.lightGray
+        titleLabel.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
 
     func setContentForCell(title: String) {
