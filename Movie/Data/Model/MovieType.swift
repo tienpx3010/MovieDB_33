@@ -10,6 +10,7 @@ import Foundation
 
 enum MovieType: CaseIterable {
     case now, upcoming, popular, top
+    
     var name: String {
         switch self {
         case .now:

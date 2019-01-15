@@ -122,19 +122,15 @@ final class SearchViewController: UIViewController {
                     } else {
                         for movie in results {
                             let resultGenres = movie.genreIds
-                            let movieSetGenres = Set(resultGenres.map({ $0 }))
-                            let searchGenres = Set(self.selectedGenres.map({ $0.id }))
+                            let movieSetGenres = Set(resultGenres.map { $0 })
+                            let searchGenres = Set(self.selectedGenres.map { $0.id })
                             let isMatch = searchGenres.isSubset(of: movieSetGenres)
                             if isMatch {
                                 outputMovies.append(movie)
                             }
                         }
                     }
-                    if page == 1 {
-                        self.movies = outputMovies
-                    } else {
-                        self.movies += outputMovies
-                    }
+                    self.movies = page == 1 ? outputMovies : self.movies + outputMovies
                 }
                 completion?()
             case .failure(let error):
@@ -166,7 +162,9 @@ final class SearchViewController: UIViewController {
             switch result {
             case .success(let genreResponse):
                 guard let results = genreResponse?.genres else { return }
-                self.genres = results.filter { $0.name != Constants.unusedCategory }
+                self.genres = results.filter {
+                    $0.name != Constants.unusedCategory
+                }
             case .failure(let error):
                 print(error as Any)
             }
@@ -296,7 +294,8 @@ extension SearchViewController: CustomSearchBarDelegate {
             activityIndicator.startAnimating()
             autoCompleteTableView.isHidden = true
             movies = []
-            searchMovie(text: searchText, page: 1) {
+            searchMovie(text: searchText, page: 1) { [weak self] in
+                guard let self = self else { return }
                 self.activityIndicator.stopAnimating()
             }
         } else {

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol CustomSearchBarDelegate: NSObjectProtocol {
+protocol CustomSearchBarDelegate: class {
     func customSearchBarCancelButtonClicked()
     func customSearchBar(textDidChange searchText: String)
     func customSearchBarSearchButtonClicked(searchText: String)
@@ -54,7 +54,8 @@ extension CustomSearchBar: UISearchBarDelegate {
         }
         customDelegate?.customSearchBar(textWillChange: searchText)
         throttler.throttle {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 self.customDelegate?.customSearchBar(textDidChange: searchText)
             }
         }
