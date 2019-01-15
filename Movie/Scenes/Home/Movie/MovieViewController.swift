@@ -8,16 +8,17 @@
 
 import UIKit
 import Reusable
+import Motion
 
-final class MovieViewController: UIViewController {
+final class MovieViewController: BaseViewController {
     @IBOutlet private weak var nowMovieCollectionView: UICollectionView!
     @IBOutlet private weak var topMovieCollectionView: UICollectionView!
     
     private struct Constants {
-        static let nowCellWidth: CGFloat = 147 * Screen.ratioWidth
-        static let nowCellHeight: CGFloat = 270 * Screen.ratioHeight
-        static let topCellWidth: CGFloat = 140 * Screen.ratioWidth
-        static let topCellHeight: CGFloat = 230 * Screen.ratioHeight
+        static let nowCellWidth: CGFloat = 147
+        static let nowCellHeight: CGFloat = 270
+        static let topCellWidth: CGFloat = 140
+        static let topCellHeight: CGFloat = 230
         static let toggleCellAnimationDuration = 0.2
         static let toggleCellScale: CGFloat = 0.5
         static let sectionInsets = UIEdgeInsets(
@@ -40,17 +41,18 @@ final class MovieViewController: UIViewController {
         }
     }
     private let movieRepository = MovieRepositoryImpl(api: APIService.share)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNowMovieCollectionView()
-        configtopMovieCollectionView()
+        configView()
         //URLCache.shared.removeAllCachedResponses()
         fetchData()
+        isMotionEnabled = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    private func configView() {
+        configNowMovieCollectionView()
+        configtopMovieCollectionView()
     }
     
     private func configNowMovieCollectionView() {
@@ -99,6 +101,10 @@ final class MovieViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction private func toggleSearch(_ sender: Any) {
+        
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -142,22 +148,11 @@ extension MovieViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension MovieViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) else {
             return
         }
-        UIView.animate(withDuration: Constants.toggleCellAnimationDuration) {
-            cell.transform = .init(scaleX: Constants.toggleCellScale, y: Constants.toggleCellScale)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) else {
-            return
-        }
-        UIView.animate(withDuration: Constants.toggleCellAnimationDuration) {
-            cell.transform = .identity
-        }
+        cell.animate()
         let viewController = MovieDetailViewController.instantiate()
         switch collectionView {
         case nowMovieCollectionView:

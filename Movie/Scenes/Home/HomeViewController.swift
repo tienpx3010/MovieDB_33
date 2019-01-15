@@ -14,12 +14,12 @@ final class HomeViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configView()
     }
-
+    
     private func configView() {
         let firstLaunch = FirstLaunch()
         if firstLaunch.isFirstLaunch {
@@ -27,7 +27,7 @@ final class HomeViewController: UITabBarController {
         }
         tabBar.tintColor = UIColor.firstGradientColor
     }
-
+    
     private func showWalkthrough() {
         let walkthroughViewController = BWWalkthroughViewController.instantiate()
         // Build the walkthrough

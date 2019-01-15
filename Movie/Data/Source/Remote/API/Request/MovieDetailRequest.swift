@@ -8,11 +8,10 @@
 
 import Foundation
 
-class MovieDetailRequest: BaseRequest {
+final class MovieDetailRequest: BaseRequest {
     required init(id: Int) {
         let body: [String: Any] = [
-            "language": "en-US",
-            "append_to_response": "credits, reviews"
+            "append_to_response": "credits,reviews,videos"
         ]
         let url = URLs.APIMovieDetailURL + "\(id)"
         super.init(url: url, requestType: .get, body: body)

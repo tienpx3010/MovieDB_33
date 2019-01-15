@@ -13,4 +13,9 @@ target 'Movie' do
   pod 'SkeletonView'
   pod 'Cosmos'
   pod 'ReadMoreTextView'
+  pod 'VGPlayer'
+  pod 'YoutubeDirectLinkExtractor'
+  pod 'SCLAlertView'
+  pod 'Material'
+  pod "UILoadControl"
 end

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Framgia. All rights reserved.
 //
 
-class MovieRequest: BaseRequest {
+final class MovieRequest: BaseRequest {
     required init(type: MovieType, page: Int) {
         let body: [String: Any]  = [
             "page": page

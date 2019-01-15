@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GenreRequest: BaseRequest {
+final class GenreRequest: BaseRequest {
     required init() {
         let body: [String: Any] = [
             "language": "en-US"

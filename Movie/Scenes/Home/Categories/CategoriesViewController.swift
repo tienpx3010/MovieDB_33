@@ -44,7 +44,9 @@ final class CategoriesViewController: BaseViewController {
             switch result {
             case .success(let genreResponse):
                 guard let results = genreResponse?.genres else { return }
-                self.genres = results.filter { $0.name != Constants.unusedCategory }
+                self.genres = results.filter {
+                    $0.name != Constants.unusedCategory
+                }
             case .failure(let error):
                 print(error as Any)
             }

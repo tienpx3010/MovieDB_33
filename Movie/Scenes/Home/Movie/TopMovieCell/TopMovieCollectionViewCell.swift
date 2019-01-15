@@ -37,7 +37,11 @@ final class TopMovieCollectionViewCell: UICollectionViewCell, NibReusable {
         titleLabel.text = movie.title
         let releaseDate = Date.fromString(date: movie.releaseDate)
         yearLabel.text = releaseDate.year
-        setMovieScore(movie.voteAverage)
+        if movie.voteAverage == 0 {
+            scoreLabel.isHidden = true
+        } else {
+            setMovieScore(movie.voteAverage)
+        }
         shadowView.isHidden = false
         hideAnimation()
     }

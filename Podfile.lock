@@ -3,56 +3,117 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - BWWalkthrough (3.0.0)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Cosmos (17.0.0)
+  - Material (2.16.4):
+    - Material/Core (= 2.16.4)
+  - Material/Core (2.16.4):
+    - Motion (~> 1.4.3)
+  - MIBadgeButton-Swift (0.5)
+  - Motion (1.4.3):
+    - Motion/Core (= 1.4.3)
+  - Motion/Core (1.4.3)
   - ObjectMapper (3.4.1)
+  - ReadMoreTextView (3.0.1)
   - Reusable (4.0.5):
     - Reusable/Storyboard (= 4.0.5)
     - Reusable/View (= 4.0.5)
   - Reusable/Storyboard (4.0.5)
   - Reusable/View (4.0.5)
+  - SCLAlertView (0.8)
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
   - SDWebImage/Core (4.4.3)
+  - SkeletonView (1.4.1)
+  - SnapKit (4.0.1)
   - Then (2.4.0)
+  - UILoadControl (2.1.0)
+  - VGPlayer (0.2.0):
+    - SnapKit (~> 4.0.0)
+  - YoutubeDirectLinkExtractor (0.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
+  - BWWalkthrough (from `https://github.com/tienpx3010/BWWalkthrough`)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `wip/swift4`)
+  - Cosmos
+  - Material
+  - MIBadgeButton-Swift (from `https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git`, branch `master`)
+  - ReadMoreTextView
   - Reusable
+  - SCLAlertView
   - SDWebImage
+  - SkeletonView
   - Then
+  - UILoadControl
+  - VGPlayer
+  - YoutubeDirectLinkExtractor
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - Cosmos
+    - Material
+    - Motion
     - ObjectMapper
+    - ReadMoreTextView
     - Reusable
+    - SCLAlertView
     - SDWebImage
+    - SkeletonView
+    - SnapKit
     - Then
+    - UILoadControl
+    - VGPlayer
+    - YoutubeDirectLinkExtractor
 
 EXTERNAL SOURCES:
+  BWWalkthrough:
+    :git: https://github.com/tienpx3010/BWWalkthrough
   ChameleonFramework:
     :branch: wip/swift4
     :git: https://github.com/ViccAlexander/Chameleon.git
+  MIBadgeButton-Swift:
+    :branch: master
+    :git: https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git
 
 CHECKOUT OPTIONS:
+  BWWalkthrough:
+    :commit: 257d24eb0972496b9855397966f6b38eae91cb40
+    :git: https://github.com/tienpx3010/BWWalkthrough
   ChameleonFramework:
     :commit: db432ca1b1a3d8f83ee1f881208c0c960a325e73
     :git: https://github.com/ViccAlexander/Chameleon.git
+  MIBadgeButton-Swift:
+    :commit: 3c2638d2e6e46ec2e6dd978d8ada8863df3df5e6
+    :git: https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  BWWalkthrough: b86abce6aa2e4ce21e36a12a277fa6e89a5db075
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Cosmos: 309e489f21ffc91a1eeecfebef7f817cd2fcfba6
+  Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
+  MIBadgeButton-Swift: 9e57309b00b168d75ca8fecb45bc75124a8ffddf
+  Motion: 153ba49692997888556c7a95207278a8b1f8be95
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+  ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
   Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SkeletonView: 60d6ce7edb0cb4c7758db33c74add50392b3c475
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
+  UILoadControl: e742ddbe4c67ba1f13b00b7d462d4141307d021f
+  VGPlayer: a1787135559aa3b9201ebdc733ee283315492289
+  YoutubeDirectLinkExtractor: 068b6a09d64551cb7cec966179d7f5f5824cd2db
 
-PODFILE CHECKSUM: 195525a5c80cde9d52d809e2f6f7497935d76929
+PODFILE CHECKSUM: 61fcc6729092f4c6977b6fe400d22809b62c6caa
 
 COCOAPODS: 1.5.3

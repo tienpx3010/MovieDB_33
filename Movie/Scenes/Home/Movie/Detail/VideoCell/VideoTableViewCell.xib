@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Light.otf">
+            <string>SFProDisplay-Light</string>
+        </array>
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="218" id="KGk-i7-Jjw" customClass="VideoTableViewCell" customModule="Movie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="211" height="220"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="211" height="219.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="15E-dA-UWz">
+                        <rect key="frame" x="0.0" y="0.0" width="211" height="128"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bumblebee (2018) - Official Teaser Trailer - Paramount Pictures" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEJ-rW-pUC">
+                        <rect key="frame" x="0.0" y="129" width="211" height="49"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="49" id="cQ0-wO-Vmp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trailer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wq-lw-gSR">
+                        <rect key="frame" x="0.0" y="178" width="204" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="wuo-1W-aA5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DEJ-rW-pUC" firstAttribute="top" secondItem="15E-dA-UWz" secondAttribute="bottom" constant="1" id="5rt-t5-Vne"/>
+                    <constraint firstItem="15E-dA-UWz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Fp-dN-fGZ"/>
+                    <constraint firstItem="15E-dA-UWz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Fzq-7K-9Ix"/>
+                    <constraint firstAttribute="trailing" secondItem="15E-dA-UWz" secondAttribute="trailing" id="OzH-xA-RAe"/>
+                    <constraint firstItem="DEJ-rW-pUC" firstAttribute="trailing" secondItem="7wq-lw-gSR" secondAttribute="trailing" constant="7" id="Z1U-m6-Yuv"/>
+                    <constraint firstItem="DEJ-rW-pUC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-16" id="npq-hw-QXI"/>
+                    <constraint firstItem="15E-dA-UWz" firstAttribute="trailing" secondItem="DEJ-rW-pUC" secondAttribute="trailing" id="pC0-W4-vIK"/>
+                    <constraint firstItem="DEJ-rW-pUC" firstAttribute="leading" secondItem="7wq-lw-gSR" secondAttribute="leading" id="pjT-ta-ebU"/>
+                    <constraint firstItem="7wq-lw-gSR" firstAttribute="top" secondItem="DEJ-rW-pUC" secondAttribute="bottom" id="pjl-G7-v7b"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7wq-lw-gSR" secondAttribute="bottom" constant="10" id="um3-eO-0A3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="thumbnailImage" destination="15E-dA-UWz" id="EaN-za-vau"/>
+                <outlet property="titleLabel" destination="DEJ-rW-pUC" id="0kR-Sm-SFX"/>
+                <outlet property="typeLabel" destination="7wq-lw-gSR" id="8lq-CW-5QZ"/>
+            </connections>
+            <point key="canvasLocation" x="-55.200000000000003" y="125.03748125937032"/>
+        </tableViewCell>
+    </objects>
+</document>
