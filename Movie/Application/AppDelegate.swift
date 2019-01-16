@@ -7,16 +7,29 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         // Set font for tabbar title text
         UITabBarItem.appearance().setTitleTextAttributes(
             [NSAttributedString.Key.font: UIFont.sfProDisplayFont(ofSize: 10, weight: .regular)],
             for: UIControl.State.normal)
+        // Configure Audio Session
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            if #available(iOS 10.0, *) {
+                try AVAudioSession.sharedInstance().setCategory(.playback,
+                                                                mode: .moviePlayback,
+                                                                options: .defaultToSpeaker)
+            }
+        } catch let error as NSError {
+            print(error)
+        }
         return true
     }
 }
