@@ -8,36 +8,40 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-struct Movie: Mappable {
-    var voteCount: Int = 0
-    var id: Int = 0
-    var video = false
-    var voteAverage: Float = 0.0
-    var title = ""
-    var popularity: Float = 0.0
-    var posterPath = ""
-    var originalLanguage = ""
-    var originalTitle = ""
+class Movie: Object, Mappable {
+    @objc dynamic var voteCount: Int = 0
+    @objc dynamic var id: Int = 0
+    @objc dynamic var video = false
+    @objc dynamic var voteAverage: Float = 0.0
+    @objc dynamic var title = ""
+    @objc dynamic var popularity: Float = 0.0
+    @objc dynamic var posterPath = ""
+    @objc dynamic var originalLanguage = ""
+    @objc dynamic var originalTitle = ""
     var genreIds = [Int]()
-    var backdropPath = ""
-    var adult = false
-    var overview = ""
-    var releaseDate = ""
+    @objc dynamic var backdropPath = ""
+    @objc dynamic var adult = false
+    @objc dynamic var overview = ""
+    @objc dynamic var releaseDate = ""
     // Detail
-    var imdbId = ""
-    var budget: Int = 0
+    @objc dynamic var imdbId = ""
+    @objc dynamic var budget: Int = 0
     var genres = [Genre]()
-    var revenue: Int = 0
-    var runtime: Int = 0
-    var status = ""
-    var tagline = ""
+    @objc dynamic var revenue: Int = 0
+    @objc dynamic var runtime: Int = 0
+    @objc dynamic var status = ""
+    @objc dynamic var tagline = ""
     var cast = [Cast]()
     var crew = [Crew]()
     // Video
     var videos = [Video]()
+    // Job
+    var character = ""
+    var job = ""
     // Info
-    var info: String {
+   var info: String {
         let year = Date.fromString(date: releaseDate).year
         let duration = Util.minutesToHoursMinutes(minutes: runtime)
         return "(\(year)) - \(duration)"
@@ -46,14 +50,20 @@ struct Movie: Mappable {
         let string = genres.map { String($0.name) }
         return string.joined(separator: ", ")
     }
-    
-    init?(map: Map) {
+    var year: String {
+        let year = Date.fromString(date: releaseDate).year
+        return year
     }
     
-    init() {
+    override static func primaryKey() -> String? {
+        return "id"
     }
     
-    mutating func mapping(map: Map) {
+    required convenience init?(map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
         voteCount <- map["vote_count"]
         id <- map["id"]
         video <- map["video"]
@@ -79,5 +89,8 @@ struct Movie: Mappable {
         cast <- map["credits.cast"]
         crew <- map["credits.crew"]
         videos <- map["videos.results"]
+        // Info
+        character <- map["character"]
+        job <- map["job"]
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import SCLAlertView
+import Toaster
 
 struct Alert {
     static func showError(_ text: String) {
@@ -18,5 +19,9 @@ struct Alert {
             let alert = SCLAlertView(appearance: appearance)
             alert.showError("Error", subTitle: text)
         }
+    }
+    
+    static func showToast(_ text: String) {
+        Toast(text: text, duration: Delay.short).show()
     }
 }
