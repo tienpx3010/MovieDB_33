@@ -14,7 +14,7 @@ import SnapKit
 import SCLAlertView
 
 final class FavoriteViewController: BaseViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     private struct Constants {
         static let emptyFavoriteMessage = "No favorite movie found."
@@ -26,6 +26,7 @@ final class FavoriteViewController: BaseViewController {
             collectionView.reloadData()
         }
     }
+    private let databaseManager = DatabaseManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ final class FavoriteViewController: BaseViewController {
                                                                   .foregroundColor: UIColor.black]))
                 .detailLabelString(NSAttributedString(string: Constants.detailMessage))
                 .image(#imageLiteral(resourceName: "icon_cinema"))
-                .dataSetBackgroundColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+                .dataSetBackgroundColor(.white)
                 .verticalSpace(20)
                 .shouldDisplay(true)
         }
@@ -107,9 +108,16 @@ extension FavoriteViewController: UICollectionViewDataSource {
                             backgroundColor: .red,
                             textColor: .white,
                             showTimeout: nil) { [weak self] in
-            guard let self = self else { return }
-            DatabaseManager.sharedInstance.delete(movieId: sender.tag)
-            self.fetchData()
+                                guard let self = self else { return }
+                                self.databaseManager.delete(movieId: sender.tag) { [weak self] result in
+                                    guard let self = self else { return }
+                                    switch result {
+                                    case .success:
+                                        self.fetchData()
+                                    case .failure(let error):
+                                        print(error as Any)
+                                    }
+                                }
         }
         alertView.addButton("Share", action: {})
         alertView.showSuccess("", subTitle: "")
@@ -123,5 +131,8 @@ extension FavoriteViewController: UICollectionViewDelegate {
             return
         }
         cell.animate()
+        let viewController = MovieDetailViewController.instantiate()
+        viewController.movie = movies[indexPath.row]
+        present(viewController, animated: true, completion: nil)
     }
 }

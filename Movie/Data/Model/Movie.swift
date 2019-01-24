@@ -41,7 +41,7 @@ class Movie: Object, Mappable {
     var character = ""
     var job = ""
     // Info
-   var info: String {
+    var info: String {
         let year = Date.fromString(date: releaseDate).year
         let duration = Util.minutesToHoursMinutes(minutes: runtime)
         return "(\(year)) - \(duration)"
